@@ -9,6 +9,18 @@ describe('format', () => {
   it('default params', () => {
     assert.equal("2,56", format(2.555));
   });
+  it('default params exponential', () => {
+    assert.equal("0,00", format(1e-8, 2));
+  });
+  it('default params exponential', () => {
+    assert.equal("0,00000010", format(1e-7, 8));
+  });
+  it('default params exponential', () => {
+    assert.equal("0,00000001", format(1e-8, 8));
+  });
+  it('default params exponential', () => {
+    assert.equal("0,00041755", format(4.1755E-4, 8));
+  });
   it('default params with thousands', () => {
     assert.equal("10.000,556", format(10000.5555, 3));
   });

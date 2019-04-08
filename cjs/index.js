@@ -20,7 +20,12 @@ var _default = function _default(value) {
 
   if (precision > 0) {
     f = String(absValue % power);
-    f += new Array(Math.max(precision - f.length, 0) + 1).join('0');
+
+    if (absValue > power) {
+      f += new Array(Math.max(precision - f.length, 0) + 1).join('0');
+    } else {
+      f = new Array(Math.max(precision - f.length, 0) + 1).join('0') + f;
+    }
   }
 
   var r = '\\d(?=(\\d{3})+$)';
