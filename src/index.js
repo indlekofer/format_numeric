@@ -2,7 +2,7 @@ export default (value, precision = 2, decPoint = ',', thousandsStep = '.', round
   value = value || 0;
   precision = precision || 0;
   if (typeof value === 'string') value = parseFloat(value);
-  var power = Math.pow(10, precision),
+  let power = Math.pow(10, precision),
     absValue = Math.abs((round) ? Math.round(value * power) : Math.floor(value * power)),
     num = String(Math.floor(absValue / power)),
     f = '';
@@ -21,7 +21,7 @@ export default (value, precision = 2, decPoint = ',', thousandsStep = '.', round
 };
 
 export const pad = (value, length = 2) => {
-  var neg = '';
+  let neg = '';
   if (value < 0) {
     value = value * -1;
     neg = '-';
